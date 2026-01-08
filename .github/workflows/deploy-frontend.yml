@@ -1,0 +1,60 @@
+name: Deploy Backend to FTP
+
+on:
+	push:
+		branches:
+			- main
+
+jobs:
+	deploy:
+		runs-on: ubuntu-latest
+
+		steps:
+			- name: Checkout code
+				uses: actions/checkout@v4
+
+			- name: Setup PHP
+				uses: shivammathur/setup-php@v2
+				with:
+					php-version: '8.2'
+					coverage: none
+
+			- name: Install Composer dependencies
+				run: composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
+
+			- name: Prepare deployment bundle
+				run: |
+					mkdir -p deploy-backend
+					rsync -av . ./deploy-backend \
+						--exclude='.git*' \
+						--exclude='node_modules' \
+						--exclude='tests' \
+						--exclude='storage/logs/*' \
+						--exclude='storage/framework/cache/*' \
+						--exclude='storage/framework/sessions/*' \
+						--exclude='storage/framework/views/*' \
+						--exclude='vendor/bin' \
+						--exclude='public/hot' \
+						--exclude='.github'
+
+			- name: Deploy via FTP (to backend folder)
+				uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+				with:
+					server: ${{ secrets.FTP_SERVER }}
+					username: ${{ secrets.FTP_USERNAME }}
+					password: ${{ secrets.FTP_PASSWORD }}
+					protocol: ftp
+					local-dir: deploy-backend/
+					server-dir: backend/
+					# No clean slate to avoid touching other folders (e.g., FRONTEND, FILES)
+					dangerous-clean-slate: false
+					exclude: |
+						**/.git*
+						**/.github/**
+						**/node_modules/**
+						**/tests/**
+						**/storage/logs/**
+						**/storage/framework/cache/**
+						**/storage/framework/sessions/**
+						**/storage/framework/views/**
+						**/public/hot
