@@ -13,6 +13,8 @@ class AppServiceProvider extends ServiceProvider
     {
         // Registrar providers de módulos
         $this->app->register(\Modules\Properties\PropertiesServiceProvider::class);
+        // registrar testimonials
+        $this->app->register(\Modules\Testimonials\Providers\TestimonialServiceProvider::class);
     }
 
     /**

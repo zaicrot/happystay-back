@@ -311,6 +311,73 @@ Usa los valores de `url` devueltos en el campo `images` al crear/actualizar prop
 
 ---
 
+## 🗣️ Testimonios - Endpoints Públicos
+
+### 1) Listar testimonios
+
+-   **Método**: GET
+-   **Ruta**: `/testimonials`
+-   **Descripción**: Lista todos los testimonios activos ordenados por fecha de creación descendente.
+
+**Ejemplo**:
+
+```bash
+curl "http://localhost:8000/testimonials"
+```
+
+### 2) Obtener detalle de testimonio
+
+-   **Método**: GET
+-   **Ruta**: `/testimonials/{id}`
+
+---
+
+## 🔒 Testimonios - Endpoints Protegidos
+
+> **Importante**: Requieren autenticación con token Bearer
+
+### 3) Crear testimonio
+
+-   **Método**: POST
+-   **Ruta**: `/testimonials`
+-   **Headers**: `Authorization: Bearer {token}`
+-   **Body** (JSON):
+
+```json
+{
+    "name": "David Bermúdez",
+    "location": "Amigos · Punta Hermosa",
+    "rating": 5,
+    "text": "Todo perfecto desde el check-in. William estuvo atento en todo momento.",
+    "avatar": "DB",
+    "is_active": true
+}
+```
+
+**Campos**:
+
+-   `name` (string, requerido)
+-   `location` (string, requerido)
+-   `rating` (integer, requerido, 1-5)
+-   `text` (string, requerido)
+-   `avatar` (string, requerido)
+-   `is_active` (boolean, opcional, default: true)
+
+### 4) Actualizar testimonio
+
+-   **Método**: PUT
+-   **Ruta**: `/testimonials/{id}`
+-   **Headers**: `Authorization: Bearer {token}`
+-   **Body**: JSON con campos a actualizar.
+
+### 5) Eliminar testimonio
+
+-   **Método**: DELETE
+-   **Ruta**: `/testimonials/{id}`
+-   **Headers**: `Authorization: Bearer {token}`
+
+---
+
 ## 📝 Notas Importantes
 
 ### Autenticación
@@ -386,7 +453,15 @@ curl -X POST http://localhost:8000/properties \
 
 ## 📚 Recursos Adicionales
 
+### Propiedades
+
 -   **Modelo**: `modules/Properties/Models/Property.php`
 -   **Controlador**: `modules/Properties/Controllers/PropertyController.php`
 -   **Servicio**: `modules/Properties/Services/PropertyService.php`
 -   **Rutas**: `modules/Properties/Routes/api.php`
+
+### Testimonios
+
+-   **Modelo**: `modules/Testimonials/Models/Testimonial.php`
+-   **Controlador**: `modules/Testimonials/Controllers/TestimonialController.php`
+-   **Rutas**: `modules/Testimonials/Routes/api.php`
