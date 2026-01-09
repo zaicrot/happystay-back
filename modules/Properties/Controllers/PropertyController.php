@@ -100,12 +100,20 @@ class PropertyController extends Controller
         ]);
 
         $stored = [];
+        $publicPath = public_path('uploads/properties');
+
+        // Crear carpeta si no existe
+        if (!is_dir($publicPath)) {
+            mkdir($publicPath, 0755, true);
+        }
 
         foreach ($request->file('images', []) as $file) {
-            $path = $file->store('properties', 'public');
+            $filename = uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move($publicPath, $filename);
+            $url = url('/uploads/properties/' . $filename);
             $stored[] = [
-                'url' => Storage::url($path),
-                'path' => $path,
+                'url' => $url,
+                'path' => 'uploads/properties/' . $filename,
             ];
         }
 

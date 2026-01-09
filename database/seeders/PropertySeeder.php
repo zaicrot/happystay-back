@@ -1,0 +1,193 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Modules\Properties\Models\Property;
+
+class PropertySeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $properties = [
+            [
+                'name' => 'Vista Mar Prime',
+                'location' => 'Vista Mar Prime · Punta Hermosa',
+                'price' => 'Consultar',
+                'period' => 'noche',
+                'guests' => 9,
+                'bedrooms' => 4,
+                'bathrooms' => 3,
+                'featured' => false,
+                'airbnb_url' => 'https://www.airbnb.com/l/X5MRxaGZ',
+                'amenities' => [
+                    ['icon' => 'beach', 'label' => 'Vista al mar'],
+                    ['icon' => 'terrace', 'label' => 'Terraza panorámica'],
+                    ['icon' => 'kitchen', 'label' => 'Cocina equipada'],
+                    ['icon' => 'wifi', 'label' => 'WiFi'],
+                    ['icon' => 'parking', 'label' => 'Estacionamiento'],
+                ],
+                'images' => [
+                    'https://integracion149.com/website_c6cf0a7f/frontend/vista-mar-prime/01.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/vista-mar-prime/02.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/vista-mar-prime/03.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/vista-mar-prime/04.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/vista-mar-prime/05.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/vista-mar-prime/06.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/vista-mar-prime/07.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/vista-mar-prime/08.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/vista-mar-prime/09.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/vista-mar-prime/10.webp',
+                ],
+            ],
+            [
+                'name' => 'Beachfront Señoritas',
+                'location' => 'Costa Peruana 2182 | Playa Señoritas',
+                'price' => 'Desde S/. 850.00',
+                'period' => 'noche',
+                'guests' => 10,
+                'bedrooms' => 3,
+                'bathrooms' => 3,
+                'featured' => true,
+                'airbnb_url' => 'https://es-l.airbnb.com/rooms/1525428116461485955',
+                'amenities' => [
+                    ['icon' => 'beach', 'label' => 'Frente a la playa'],
+                    ['icon' => 'ac', 'label' => 'Aire Acondicionado'],
+                    ['icon' => 'grill', 'label' => 'Parrilla'],
+                    ['icon' => 'terrace', 'label' => 'Terraza'],
+                    ['icon' => 'security', 'label' => 'Seguridad garantizada'],
+                    ['icon' => 'kitchen', 'label' => 'Cocina Equipada'],
+                    ['icon' => 'pool', 'label' => 'Piscina Temperada'],
+                    ['icon' => 'wifi', 'label' => 'Zona de trabajo'],
+                    ['icon' => 'coffee', 'label' => 'Cafetera'],
+                    ['icon' => 'bedding', 'label' => 'Ropa de Cama'],
+                    ['icon' => 'bath', 'label' => 'Artículos de Aseo'],
+                    ['icon' => 'parking', 'label' => 'Estacionamiento'],
+                ],
+                'images' => [
+                    'https://integracion149.com/website_c6cf0a7f/frontend/beachfront-playa-senoritas-piscina-terraza/01.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/beachfront-playa-senoritas-piscina-terraza/02.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/beachfront-playa-senoritas-piscina-terraza/03.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/beachfront-playa-senoritas-piscina-terraza/04.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/beachfront-playa-senoritas-piscina-terraza/05.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/beachfront-playa-senoritas-piscina-terraza/06.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/beachfront-playa-senoritas-piscina-terraza/07.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/beachfront-playa-senoritas-piscina-terraza/08.webp',
+                ],
+            ],
+            [
+                'name' => 'Paradise in Stunning Beach',
+                'location' => 'Playa Caballeros · Punta Hermosa',
+                'price' => 'Desde S/. 850.00',
+                'period' => 'noche',
+                'guests' => 8,
+                'bedrooms' => 4,
+                'bathrooms' => 3,
+                'featured' => false,
+                'airbnb_url' => 'https://es-l.airbnb.com/rooms/1527899059073105488',
+                'amenities' => [
+                    ['icon' => 'beach', 'label' => 'Frente a la playa'],
+                    ['icon' => 'grill', 'label' => 'Parrilla'],
+                    ['icon' => 'terrace', 'label' => 'Terraza amplia'],
+                    ['icon' => 'security', 'label' => 'Seguridad garantizada'],
+                    ['icon' => 'kitchen', 'label' => 'Cocina Equipada'],
+                    ['icon' => 'pool', 'label' => 'Piscina grande'],
+                    ['icon' => 'wifi', 'label' => 'Zona de trabajo'],
+                    ['icon' => 'coffee', 'label' => 'Cafetera'],
+                    ['icon' => 'bedding', 'label' => 'Ropa de Cama'],
+                    ['icon' => 'bath', 'label' => 'Artículos de Aseo'],
+                    ['icon' => 'parking', 'label' => 'Estacionamiento'],
+                    ['icon' => 'gym', 'label' => 'Gimnasio'],
+                ],
+                'images' => [
+                    'https://integracion149.com/website_c6cf0a7f/frontend/paradise-in-stunning-beach-house-playa-caballeros/01.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/paradise-in-stunning-beach-house-playa-caballeros/02.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/paradise-in-stunning-beach-house-playa-caballeros/03.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/paradise-in-stunning-beach-house-playa-caballeros/04.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/paradise-in-stunning-beach-house-playa-caballeros/05.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/paradise-in-stunning-beach-house-playa-caballeros/06.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/paradise-in-stunning-beach-house-playa-caballeros/07.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/paradise-in-stunning-beach-house-playa-caballeros/08.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/paradise-in-stunning-beach-house-playa-caballeros/09.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/paradise-in-stunning-beach-house-playa-caballeros/10.webp',
+                ],
+            ],
+            [
+                'name' => 'Mirador del Mar | Dúplex con piscina',
+                'location' => 'Mirador del Mar · Punta Hermosa',
+                'price' => 'Consultar',
+                'period' => 'noche',
+                'guests' => 10,
+                'bedrooms' => 4,
+                'bathrooms' => 4,
+                'featured' => false,
+                'airbnb_url' => 'https://es-l.airbnb.com/rooms/1520379592139978771',
+                'amenities' => [
+                    ['icon' => 'beach', 'label' => 'Vista al mar'],
+                    ['icon' => 'ac', 'label' => 'Aire acondicionado'],
+                    ['icon' => 'grill', 'label' => 'Parrilla'],
+                    ['icon' => 'terrace', 'label' => 'Terraza amplia'],
+                    ['icon' => 'security', 'label' => 'Seguridad'],
+                    ['icon' => 'kitchen', 'label' => 'Cocina equipada'],
+                    ['icon' => 'pool', 'label' => 'Piscina'],
+                    ['icon' => 'wifi', 'label' => 'WiFi'],
+                    ['icon' => 'coffee', 'label' => 'Cafetera'],
+                    ['icon' => 'bedding', 'label' => 'Ropa de cama'],
+                    ['icon' => 'bath', 'label' => 'Baños completos'],
+                    ['icon' => 'parking', 'label' => '2 Estacionamientos'],
+                    ['icon' => 'gym', 'label' => 'Gimnasio'],
+                ],
+                'images' => [
+                    'https://integracion149.com/website_c6cf0a7f/frontend/duplex-mirador-del-mar-pool-best-view/01.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/duplex-mirador-del-mar-pool-best-view/02.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/duplex-mirador-del-mar-pool-best-view/03.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/duplex-mirador-del-mar-pool-best-view/04.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/duplex-mirador-del-mar-pool-best-view/05.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/duplex-mirador-del-mar-pool-best-view/06.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/duplex-mirador-del-mar-pool-best-view/07.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/duplex-mirador-del-mar-pool-best-view/08.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/duplex-mirador-del-mar-pool-best-view/09.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/duplex-mirador-del-mar-pool-best-view/10.webp',
+                ],
+            ],
+            [
+                'name' => 'Sunset View Dúplex',
+                'location' => 'Sunset View · Punta Hermosa',
+                'price' => 'Consultar',
+                'period' => 'noche',
+                'guests' => 10,
+                'bedrooms' => 3,
+                'bathrooms' => 2,
+                'featured' => false,
+                'airbnb_url' => 'https://es-l.airbnb.com/rooms/1545984399998767987',
+                'amenities' => [
+                    ['icon' => 'beach', 'label' => 'Cerca al mar'],
+                    ['icon' => 'terrace', 'label' => 'Terraza'],
+                    ['icon' => 'pool', 'label' => 'Piscina'],
+                    ['icon' => 'kitchen', 'label' => 'Cocina equipada'],
+                    ['icon' => 'wifi', 'label' => 'WiFi'],
+                    ['icon' => 'parking', 'label' => 'Estacionamiento'],
+                ],
+                'images' => [
+                    'https://integracion149.com/website_c6cf0a7f/frontend/sunset-view-duplex/01.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/sunset-view-duplex/02.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/sunset-view-duplex/03.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/sunset-view-duplex/04.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/sunset-view-duplex/05.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/sunset-view-duplex/06.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/sunset-view-duplex/07.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/sunset-view-duplex/08.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/sunset-view-duplex/09.webp',
+                    'https://integracion149.com/website_c6cf0a7f/frontend/sunset-view-duplex/10.webp',
+                ],
+            ],
+        ];
+
+        foreach ($properties as $property) {
+            Property::create($property);
+        }
+    }
+}

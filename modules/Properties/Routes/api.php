@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Modules\Properties\Controllers\PropertyController;
 
-Route::prefix('properties')->group(function () {
+Route::middleware('cors')->prefix('properties')->group(function () {
     // Rutas públicas
     Route::get('/', [PropertyController::class, 'index'])->name('properties.index');
     Route::get('/featured', [PropertyController::class, 'featured'])->name('properties.featured');
@@ -19,3 +19,4 @@ Route::prefix('properties')->group(function () {
         Route::delete('/{id}', [PropertyController::class, 'destroy'])->name('properties.destroy');
     });
 });
+
