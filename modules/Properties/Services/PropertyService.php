@@ -37,7 +37,7 @@ class PropertyService
 
         // Ordenamiento
         $sortBy = $filters['sort_by'] ?? 'created_at';
-        $sortOrder = $filters['sort_order'] ?? 'desc';
+        $sortOrder = $filters['sort_order'] ?? 'asc';
         $query->orderBy($sortBy, $sortOrder);
 
         // Paginación
