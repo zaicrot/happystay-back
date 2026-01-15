@@ -16,6 +16,8 @@ class CorsMiddleware
             'http://localhost:8080',
             'https://happystay.pe',
             'https://integracion149.com/website_c6cf0a7f/frontend/',
+            'https://happystay.pages.dev',
+            'happystay-8cd.pages.dev'
         ];
 
         $origin = $request->header('Origin');
