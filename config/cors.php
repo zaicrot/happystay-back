@@ -19,10 +19,10 @@ return [
     'allowed_origins' => [
         'http://localhost:8080',
         'https://happystay.pe',
+        'https://www.happystay.pe',
         'https://integracion149.com/website_c6cf0a7f/frontend/',
         'https://happystay.pages.dev',
-        'happystay-8cd.pages.dev'
-
+        'happystay-8cd.pages.dev',
     ],
 
     'allowed_origins_patterns' => [],
